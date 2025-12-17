@@ -70,7 +70,7 @@ export default function Header() {
           <div className="flex items-center justify-between py-4 gap-6">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="w-10 h-10 bg-[#FF9900] rounded flex items-center justify-center text-white">
+              <div className="w-10 h-10 bg-[var(--jl-primary)] rounded flex items-center justify-center text-white">
                 <ShoppingCart size={24} />
               </div>
               <div>
@@ -82,7 +82,7 @@ export default function Header() {
             {/* Search Bar - Desktop */}
             <div className="hidden md:flex items-center flex-1 max-w-2xl">
               <div className="flex w-full">
-                <select className="px-4 py-2 border border-r-0 border-gray-300 bg-white text-[#333333] text-sm focus:outline-none focus:border-[#FF9900] rounded-l">
+                <select className="px-4 py-2 border border-r-0 border-gray-300 bg-white text-[#333333] text-sm focus:outline-none focus:border-[var(--jl-primary)] rounded-l">
                   <option>ALL CATEGORIES</option>
                   <option>Electronics</option>
                   <option>Fashion</option>
@@ -91,9 +91,9 @@ export default function Header() {
                 <input
                   type="text"
                   placeholder="Search entire store here..."
-                  className="flex-1 px-4 py-2 border border-gray-300 text-sm focus:outline-none focus:border-[#FF9900] text-[#333333]"
+                  className="flex-1 px-4 py-2 border border-gray-300 text-sm focus:outline-none focus:border-[var(--jl-primary)] text-[#333333]"
                 />
-                <button className="px-6 py-2 bg-[#FF9900] hover:bg-[#E68A00] text-white font-semibold rounded-r transition-colors">
+                <button className="px-6 py-2 bg-[var(--jl-primary)] hover:bg-[var(--jl-primary-hover)] text-white font-semibold rounded-r transition-colors">
                   <Search size={18} />
                 </button>
               </div>
@@ -101,7 +101,7 @@ export default function Header() {
 
             {/* Phone CTA */}
             <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-              <div className="w-10 h-10 bg-[#FF9900] rounded flex items-center justify-center text-white">
+              <div className="w-10 h-10 bg-[var(--jl-primary)] rounded flex items-center justify-center text-white">
                 <Phone size={20} />
               </div>
               <div className="text-sm">
@@ -118,38 +118,38 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Categories Dropdown */}
-            <button className="bg-[#FF9900] hover:bg-[#E68A00] text-white px-6 py-3 flex items-center gap-3 font-semibold uppercase text-sm transition-colors">
+            <button className="bg-[var(--jl-primary)] hover:bg-[var(--jl-primary-hover)] text-white px-6 py-3 flex items-center gap-3 font-semibold uppercase text-sm transition-colors">
               <Menu size={18} />
               <span>CATEGORIES</span>
             </button>
 
             {/* Navigation Menu - Desktop */}
             <nav className="hidden md:flex items-center gap-8">
-              <Link href="/" className="text-[#FF9900] font-semibold uppercase text-sm py-4 border-b-2 border-[#FF9900]">
+              <Link href="/" className="text-[var(--jl-primary)] font-semibold uppercase text-sm py-4 border-b-2 border-[var(--jl-primary)]">
                 HOME
               </Link>
-              <Link href="/about" className="text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm py-4 transition-colors">
+              <Link href="/about" className="text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm py-4 transition-colors">
                 ABOUT US
               </Link>
-              <Link href="/men" className="text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm py-4 transition-colors">
+              <Link href="/men" className="text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm py-4 transition-colors">
                 MEN
               </Link>
-              <Link href="/women" className="text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm py-4 transition-colors">
+              <Link href="/women" className="text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm py-4 transition-colors">
                 WOMEN
               </Link>
-              <Link href="/electronic" className="text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm py-4 transition-colors">
+              <Link href="/electronic" className="text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm py-4 transition-colors">
                 ELECTRONIC
               </Link>
-              <Link href="/contact" className="text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm py-4 transition-colors">
+              <Link href="/contact" className="text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm py-4 transition-colors">
                 CONTACT US
               </Link>
             </nav>
 
             {/* Cart Button */}
-            <Link href="/cart" className="flex items-center gap-3 bg-[#555555] hover:bg-[#444444] text-white px-6 py-3 transition-colors">
+            <Link href="/cart" className="flex items-center gap-3 bg-[var(--jl-black)] hover:bg-gray-800 text-white px-6 py-3 transition-colors">
               <ShoppingCart size={18} />
               <span className="font-semibold uppercase text-sm">MY CART</span>
-              <span className="bg-[#FF9900] text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">
+              <span className="bg-[var(--jl-primary)] text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">
                 2
               </span>
             </Link>
@@ -173,26 +173,26 @@ export default function Header() {
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-[#FF9900]"
+                className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-[var(--jl-primary)]"
               />
               <Search size={18} className="absolute right-3 top-2.5 text-gray-400" />
             </div>
-            <Link href="/" className="block py-2 text-[#FF9900] font-semibold uppercase text-sm">
+            <Link href="/" className="block py-2 text-[var(--jl-primary)] font-semibold uppercase text-sm">
               HOME
             </Link>
-            <Link href="/about" className="block py-2 text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm">
+            <Link href="/about" className="block py-2 text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm">
               ABOUT US
             </Link>
-            <Link href="/men" className="block py-2 text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm">
+            <Link href="/men" className="block py-2 text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm">
               MEN
             </Link>
-            <Link href="/women" className="block py-2 text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm">
+            <Link href="/women" className="block py-2 text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm">
               WOMEN
             </Link>
-            <Link href="/electronic" className="block py-2 text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm">
+            <Link href="/electronic" className="block py-2 text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm">
               ELECTRONIC
             </Link>
-            <Link href="/contact" className="block py-2 text-[#333333] hover:text-[#FF9900] font-medium uppercase text-sm">
+            <Link href="/contact" className="block py-2 text-[#333333] hover:text-[var(--jl-primary)] font-medium uppercase text-sm">
               CONTACT US
             </Link>
           </div>
