@@ -1,0 +1,30 @@
+{
+  "name": "ecommerce-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack e-commerce platform with Next.js, Fastify, Supabase, and Socket.io",
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "build": "pnpm run --recursive build",
+    "lint": "pnpm run --recursive lint",
+    "clean": "pnpm run --recursive clean && rm -rf node_modules"
+  },
+  "keywords": [
+    "ecommerce",
+    "next.js",
+    "fastify",
+    "supabase",
+    "socket.io",
+    "monorepo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.87.3",
+    "dotenv": "^17.2.3"
+  }
+}

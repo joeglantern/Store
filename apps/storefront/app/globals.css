@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+/* ==========================================
+   JOHN LEWIS DESIGN TOKENS (Simplified)
+   ========================================== */
+:root {
+  /* Primary Colors - Based on actual JL design */
+  --jl-primary: #0066CC;        /* John Lewis Blue (from screenshots) */
+  --jl-primary-hover: #0052A3;  /* Darker on hover */
+  --jl-black: #000000;          /* True Black for buttons */
+
+  /* Text Colors */
+  --jl-text-primary: #1A1A1A;   /* Almost Black */
+  --jl-text-secondary: #666666; /* Medium Gray */
+  --jl-text-muted: #999999;     /* Light Gray */
+
+  /* Surface Colors */
+  --jl-background: #FFFFFF;     /* Pure White (NOT gray) */
+  --jl-surface: #FFFFFF;        /* White Surface */
+  --jl-border: #DDDDDD;         /* Simple Gray Border */
+
+  /* Status Colors */
+  --jl-success: #2D8A3E;        /* Forest Green */
+  --jl-error: #D32F2F;          /* Deep Red */
+  --jl-rating: #FFA500;         /* Orange Star (from screenshots) */
+
+  /* Minimal Shadows */
+  --jl-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --jl-shadow-card: 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* Border Radius - Keep simple */
+  --jl-radius: 4px;
+
+  /* Legacy tokens (keep for compatibility) */
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--jl-background);
+  color: var(--jl-text-primary);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================
+   SIMPLE TRANSITIONS
+   ========================================== */
+
+/* Minimal transitions for interactive elements */
+button,
+a {
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Simple focus states */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--jl-primary);
+  outline-offset: 2px;
+}
+
+/* Sticky Add to Cart Animation */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Sticky Gallery Sidebar */
+.sticky-gallery {
+  position: sticky;
+  top: 100px; /* Lowered for better visibility */
+  height: fit-content;
+  max-height: calc(100vh - 120px);
+  transform: translateZ(0); /* GPU acceleration */
+  will-change: transform;
+}
+
+.sticky-gallery.is-sticky {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 1024px) {
+  .sticky-gallery {
+    position: relative;
+    top: 0;
+    max-height: none;
+  }
+}
+
+/* Mini Product Card Sticky Positioning */
+.mini-card-sticky {
+  position: sticky;
+  top: 100px;  /* Lower offset for better visibility */
+  height: fit-content;
+  max-height: calc(100vh - 120px);  /* Adjusted max height */
+  transform: translateZ(0); /* GPU acceleration */
+  will-change: transform, opacity;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mini-card-enter {
+  animation: fade-slide-in 0.4s ease-out;
+}
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+/* Grid transitions */
+.pdp-grid {
+  transition: grid-template-columns 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 1024px) {
+  .mini-card-sticky {
+    display: none;
+  }
+}
+
+/* Hide scrollbar for thumbnail strip */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
