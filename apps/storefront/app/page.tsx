@@ -129,30 +129,30 @@ export default function HomePage() {
               <p className="text-sm text-[#999999]">Admin can add products from the dashboard</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {featuredProducts.map((product) => (
                 <Link
                   key={product.id}
                   href={`/products/${product.slug}`}
-                  className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow group"
+                  className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow group flex flex-col"
                 >
                   {/* Product Image */}
                   <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
                     <div className="w-full h-full bg-gray-200 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
-                      <Package size={80} strokeWidth={1} className="text-gray-400" />
+                      <Package size={80} strokeWidth={1} className="text-gray-400 sm:w-20 sm:h-20 w-12 h-12" />
                     </div>
                   </div>
 
                   {/* Product Info */}
-                  <div className="p-4">
+                  <div className="p-3 sm:p-4 flex flex-col flex-1">
                     {product.brand && (
                       <p className="text-xs text-[#999999] uppercase mb-1">{product.brand}</p>
                     )}
-                    <h3 className="font-semibold text-[#333333] mb-2 line-clamp-2 group-hover:text-[var(--jl-primary)] transition-colors">
+                    <h3 className="font-semibold text-[#333333] mb-2 line-clamp-2 group-hover:text-[var(--jl-primary)] transition-colors text-sm sm:text-base">
                       {product.name}
                     </h3>
-                    <div className="flex items-center justify-between mt-4">
-                      <div className="text-lg font-bold text-[var(--jl-text-primary)]">
+                    <div className="mt-auto">
+                      <div className="text-base sm:text-lg font-bold text-[var(--jl-text-primary)] mb-2">
                         {formatPrice(product.base_price)}
                       </div>
                       <button
@@ -160,10 +160,11 @@ export default function HomePage() {
                           e.preventDefault()
                           alert('Add to cart coming in Phase 3!')
                         }}
-                        className="px-4 py-2 bg-[var(--jl-black)] hover:bg-gray-800 text-white text-sm font-semibold rounded transition-colors flex items-center gap-2"
+                        className="w-full px-3 py-2 bg-[var(--jl-black)] hover:bg-gray-800 text-white text-xs sm:text-sm font-semibold rounded transition-colors flex items-center justify-center gap-1.5"
                       >
-                        <ShoppingCart size={16} />
-                        <span>Add to Cart</span>
+                        <ShoppingCart size={14} className="sm:w-4 sm:h-4" />
+                        <span className="hidden sm:inline">Add to Cart</span>
+                        <span className="sm:hidden">Add</span>
                       </button>
                     </div>
                   </div>
