@@ -45,7 +45,7 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Carousel Section */}
-      <section className="bg-gray-100 relative">
+      <section className="bg-white relative">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
             {/* Left Side - Text Content */}
@@ -54,7 +54,7 @@ export default function HomePage() {
                 {/* Navigation Arrows - Left */}
                 <button
                   onClick={() => setCurrentSlide(Math.max(0, currentSlide - 1))}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded flex items-center justify-center text-gray-600 hover:text-[#FF9900] transition-all shadow-md z-10"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded flex items-center justify-center text-gray-600 hover:text-[var(--jl-primary)] transition-all shadow-md z-10"
                 >
                   <ChevronLeft size={24} />
                 </button>
@@ -67,14 +67,14 @@ export default function HomePage() {
                 </p>
                 <Link
                   href="/products"
-                  className="inline-block px-8 py-3 border-2 border-[#333333] text-[#333333] hover:bg-[#333333] hover:text-white font-semibold uppercase text-sm transition-all"
+                  className="inline-block px-8 py-3 bg-[var(--jl-black)] text-white hover:bg-gray-800 font-semibold uppercase text-sm transition-all"
                 >
                   {slides[currentSlide].buttonText}
                 </Link>
 
                 {/* Carousel Indicators */}
                 <div className="flex items-center gap-2 mt-12">
-                  <div className="w-3 h-3 rounded-full bg-[#FF9900]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[var(--jl-primary)]"></div>
                   <div className="w-3 h-3 rounded-full bg-gray-300"></div>
                   <div className="w-3 h-3 rounded-full bg-gray-300"></div>
                 </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Side - Product Image */}
-            <div className="relative flex items-center justify-center bg-gray-100 p-8">
+            <div className="relative flex items-center justify-center bg-white p-8">
               <div className="relative w-full max-w-md aspect-square">
                 {/* Placeholder for product image */}
                 <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-400">
@@ -93,7 +93,7 @@ export default function HomePage() {
               {/* Navigation Arrow - Right */}
               <button
                 onClick={() => setCurrentSlide(Math.min(slides.length - 1, currentSlide + 1))}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded flex items-center justify-center text-gray-600 hover:text-[#FF9900] transition-all shadow-md z-10"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded flex items-center justify-center text-gray-600 hover:text-[var(--jl-primary)] transition-all shadow-md z-10"
               >
                 <ChevronRight size={24} />
               </button>
@@ -108,13 +108,13 @@ export default function HomePage() {
           <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-3xl font-bold text-[#333333] uppercase">HOT DEALS</h2>
-              <div className="w-24 h-1 bg-[#FF9900] mt-2"></div>
+              <div className="w-24 h-1 bg-[var(--jl-primary)] mt-2"></div>
             </div>
             <div className="flex items-center gap-2">
-              <button className="w-10 h-10 border border-gray-300 hover:border-[#FF9900] hover:text-[#FF9900] rounded flex items-center justify-center transition-all">
+              <button className="w-10 h-10 border border-gray-300 hover:border-[var(--jl-primary)] hover:text-[var(--jl-primary)] rounded flex items-center justify-center transition-all">
                 <ChevronLeft size={20} />
               </button>
-              <button className="w-10 h-10 border border-gray-300 hover:border-[#FF9900] hover:text-[#FF9900] rounded flex items-center justify-center transition-all">
+              <button className="w-10 h-10 border border-gray-300 hover:border-[var(--jl-primary)] hover:text-[var(--jl-primary)] rounded flex items-center justify-center transition-all">
                 <ChevronRight size={20} />
               </button>
             </div>
@@ -148,11 +148,11 @@ export default function HomePage() {
                     {product.brand && (
                       <p className="text-xs text-[#999999] uppercase mb-1">{product.brand}</p>
                     )}
-                    <h3 className="font-semibold text-[#333333] mb-2 line-clamp-2 group-hover:text-[#FF9900] transition-colors">
+                    <h3 className="font-semibold text-[#333333] mb-2 line-clamp-2 group-hover:text-[var(--jl-primary)] transition-colors">
                       {product.name}
                     </h3>
                     <div className="flex items-center justify-between mt-4">
-                      <div className="text-lg font-bold text-[#FF9900]">
+                      <div className="text-lg font-bold text-[var(--jl-text-primary)]">
                         {formatPrice(product.base_price)}
                       </div>
                       <button
@@ -160,7 +160,7 @@ export default function HomePage() {
                           e.preventDefault()
                           alert('Add to cart coming in Phase 3!')
                         }}
-                        className="px-4 py-2 bg-[#FF9900] hover:bg-[#E68A00] text-white text-sm font-semibold rounded transition-colors flex items-center gap-2"
+                        className="px-4 py-2 bg-[var(--jl-black)] hover:bg-gray-800 text-white text-sm font-semibold rounded transition-colors flex items-center gap-2"
                       >
                         <ShoppingCart size={16} />
                         <span>Add to Cart</span>
