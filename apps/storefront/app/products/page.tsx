@@ -51,14 +51,14 @@ export default function ProductsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F5F5]">
+    <div className="min-h-screen bg-white">
       <Header />
 
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="text-sm text-[#666666]">
-            <Link href="/" className="hover:text-[#FF9900]">Home</Link>
+            <Link href="/" className="hover:text-[var(--jl-primary)]">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-[#333333]">All Products</span>
           </nav>
@@ -76,7 +76,7 @@ export default function ProductsPage() {
                   onClick={() => setSelectedCategory('')}
                   className={`block w-full text-left px-3 py-2 text-sm rounded transition-colors ${
                     selectedCategory === ''
-                      ? 'bg-[#FF9900] text-white font-medium'
+                      ? 'bg-[var(--jl-primary)] text-white font-medium'
                       : 'text-[#666666] hover:bg-gray-100'
                   }`}
                 >
@@ -88,7 +88,7 @@ export default function ProductsPage() {
                     onClick={() => setSelectedCategory(category.id)}
                     className={`block w-full text-left px-3 py-2 text-sm rounded transition-colors ${
                       selectedCategory === category.id
-                        ? 'bg-[#FF9900] text-white font-medium'
+                        ? 'bg-[var(--jl-primary)] text-white font-medium'
                         : 'text-[#666666] hover:bg-gray-100'
                     }`}
                   >
@@ -112,7 +112,7 @@ export default function ProductsPage() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
-                    className="px-4 py-2 border border-gray-300 rounded bg-white text-[#333333] text-sm focus:outline-none focus:border-[#FF9900]"
+                    className="px-4 py-2 border border-gray-300 rounded bg-white text-[#333333] text-sm focus:outline-none focus:border-[var(--jl-primary)]"
                   >
                     <option value="name:asc">Name (A-Z)</option>
                     <option value="name:desc">Name (Z-A)</option>
@@ -135,7 +135,7 @@ export default function ProductsPage() {
                 {selectedCategory && (
                   <button
                     onClick={() => setSelectedCategory('')}
-                    className="text-[#FF9900] hover:underline font-medium"
+                    className="text-[var(--jl-primary)] hover:underline font-medium"
                   >
                     View all products
                   </button>
@@ -163,7 +163,7 @@ export default function ProductsPage() {
                           {product.brand}
                         </p>
                       )}
-                      <h3 className="font-semibold text-[#333333] mb-2 line-clamp-2 group-hover:text-[#FF9900] transition-colors">
+                      <h3 className="font-semibold text-[#333333] mb-2 line-clamp-2 group-hover:text-[var(--jl-primary)] transition-colors">
                         {product.name}
                       </h3>
                       {product.description && (
@@ -172,7 +172,7 @@ export default function ProductsPage() {
                         </p>
                       )}
                       <div className="flex items-center justify-between">
-                        <span className="text-lg font-bold text-[#FF9900]">
+                        <span className="text-lg font-bold text-[var(--jl-text-primary)]">
                           {formatPrice(product.base_price)}
                         </span>
                         <button
@@ -180,7 +180,7 @@ export default function ProductsPage() {
                             e.preventDefault()
                             alert('Add to cart coming soon!')
                           }}
-                          className="px-4 py-2 bg-[#FF9900] hover:bg-[#E68A00] text-white text-sm font-semibold rounded transition-colors flex items-center gap-2"
+                          className="px-4 py-2 bg-[var(--jl-black)] hover:bg-gray-800 text-white text-sm font-semibold rounded transition-colors flex items-center gap-2"
                         >
                           <ShoppingCart size={16} />
                           <span>Add to Cart</span>
